@@ -1,0 +1,29 @@
+{
+  "should_trigger": [
+    "Calcule mon métabolisme de base",
+    "Combien de calories je dois manger pour sécher ?",
+    "Donne-moi mes macros pour une prise de masse",
+    "Fais-moi un plan de repas végétarien à 2000 kcal",
+    "Une recette riche en protéines sans gluten",
+    "Adapte mon programme A/B/C, j'ai mal au dos",
+    "J'ai fait 3x5 au squat à 100 kg aujourd'hui",
+    "Je pèse 80 kg ce matin, mets à jour mon profil",
+    "What's my TDEE?",
+    "J'ai mal en bas du dos, comment me renforcer ?",
+    "Quels exercices pour des genoux plus solides ?",
+    "Comment faire ma première traction ?",
+    "Progression pour le muscle-up",
+    "Je veux apprendre le drapeau humain",
+    "Un circuit de callisthénie pour débutant en surpoids",
+    "Étirements de hanches et ischio-jambiers"
+  ],
+  "should_not_trigger": [
+    "Réserve-moi une table au restaurant ce soir",
+    "Fais ma liste de courses Instacart habituelle",
+    "Résultat du match de l'OL hier ?",
+    "Prépare une facture d'entretien dans Henrri",
+    "Analyse la liquidité du BTC",
+    "Critique mon site vitrine d'entreprise",
+    "Comment installer Docker sur un VPS ?"
+  ]
+}

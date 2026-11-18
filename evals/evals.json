@@ -1,0 +1,140 @@
+{
+  "skill": "coach-sport-complet",
+  "version": "2.0.0",
+  "evals": [
+    {
+      "id": "bmr-homme-perte",
+      "prompt": "Homme, 35 ans, 82 kg, 180 cm, modérément actif, je veux perdre du poids. Mes calories et macros ?",
+      "expected": {
+        "bmr": 1775,
+        "tdee": 2751,
+        "target_kcal": 2251,
+        "protein_g": 164,
+        "fat_g": 63,
+        "carbs_g": 258
+      },
+      "checks": [
+        "Formule Mifflin-St Jeor homme (+5)",
+        "Multiplicateur 1.55",
+        "Déficit −500",
+        "Chiffres présentés comme calcul, pas comme un profil déjà connu"
+      ]
+    },
+    {
+      "id": "bmr-femme-muscle",
+      "prompt": "Femme, 28 ans, 60 kg, 165 cm, très active, prise de muscle.",
+      "expected": {
+        "bmr": 1330,
+        "tdee": 2295,
+        "target_kcal": 2595,
+        "protein_g": 120,
+        "fat_g": 72,
+        "carbs_g": 367
+      },
+      "checks": [
+        "Formule femme (−161)",
+        "Multiplicateur 1.725",
+        "Surplus +300"
+      ]
+    },
+    {
+      "id": "garde-fou",
+      "prompt": "Femme, 60 ans, 50 kg, 150 cm, sédentaire, perte de poids.",
+      "expected": {
+        "bmr": 976,
+        "tdee": 1172,
+        "target_kcal": 1200,
+        "capped": true,
+        "protein_g": 100,
+        "fat_g": 33,
+        "carbs_g": 125
+      },
+      "checks": [
+        "Cible plafonnée à 1200 kcal et l'utilisateur est prévenu"
+      ]
+    },
+    {
+      "id": "plan-repas-restriction",
+      "prompt": "Fais-moi un plan de repas pour 2251 kcal, sans lactose.",
+      "checks": [
+        "Aucun produit laitier avec lactose",
+        "Total à ±5 % de 2251 kcal",
+        "Tableau repas | kcal | P | L | G + total",
+        "Macros présentées comme estimations"
+      ]
+    },
+    {
+      "id": "programme-genou",
+      "prompt": "J'ai mal au genou, adapte ma séance A.",
+      "checks": [
+        "Squat barre remplacé (box squat / goblet sur box / leg press partielle) ou travail issu de renforcement-genoux.md",
+        "Signaux d'arrêt mentionnés",
+        "Pas de diagnostic médical"
+      ]
+    },
+    {
+      "id": "progression",
+      "prompt": "Séance B : rowing barre 4×10 à 60 kg sur toutes les séries.",
+      "checks": [
+        "Propose +2,5 kg à la prochaine séance B",
+        "Reste dans la logique de progression double de training.md"
+      ]
+    },
+    {
+      "id": "profil-manquant",
+      "prompt": "Calcule mon TDEE.",
+      "checks": [
+        "Ne invente aucune valeur",
+        "Demande les données manquantes une à une"
+      ]
+    },
+    {
+      "id": "lombaires-renforcement",
+      "prompt": "J'ai souvent mal en bas du dos, quels exercices de renforcement me conseilles-tu pour commencer ?",
+      "checks": [
+        "S'appuie sur references/renforcement-lombaires.md",
+        "Propose une régression (pads hauts, mains, iso, ou good morning assis)",
+        "Mentionne pas de douleur pendant ni après",
+        "Ne se limite pas au seul gainage type planche / bird dog / dead bug",
+        "Pas de diagnostic (hernie, etc.) inventé"
+      ]
+    },
+    {
+      "id": "genoux-sans-materiel",
+      "prompt": "Programme pour des genoux plus solides, sans matériel.",
+      "checks": [
+        "S'appuie sur references/renforcement-genoux.md",
+        "Inclut une régression (chaise, hauteur, aide des mains)",
+        "Échauffement type marche en arrière évoqué",
+        "Consigne douleur = régresser"
+      ]
+    },
+    {
+      "id": "premiere-traction",
+      "prompt": "Comment progresser vers ma première traction ?",
+      "checks": [
+        "S'appuie sur references/callisthenie-tractions.md ou debutants.md",
+        "Australiennes et/ou négatives avant les tractions complètes",
+        "Fréquence raisonnable (pas tous les jours sans repos pour le dos)"
+      ]
+    },
+    {
+      "id": "muscle-up",
+      "prompt": "Je veux apprendre le muscle-up, par où commencer ?",
+      "checks": [
+        "S'appuie sur references/callisthenie-muscle-up.md",
+        "Met l'accent sur les tractions lestées / hauteur poitrine et l'overgrip, pas seulement la technique de bascule",
+        "Propose une progression (négatifs pour la transition)"
+      ]
+    },
+    {
+      "id": "debutant-poids-de-corps",
+      "prompt": "Je débute au poids de corps et je porte un peu trop de poids, un circuit simple ?",
+      "checks": [
+        "S'appuie sur references/callisthenie-debutants.md",
+        "Barres basses / angles faciles, beaucoup de répétitions propres avant la force lourde",
+        "Ton encourageant, sans régime agressif inventé"
+      ]
+    }
+  ]
+}
